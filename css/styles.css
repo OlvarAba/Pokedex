@@ -1,0 +1,24 @@
+body {
+  background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png');
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+  color: Yellow;
+}
+
+.pokemonstats {
+  color: white;
+  text-align: center;
+}
+
+a {
+  cursor:pointer;
+}
