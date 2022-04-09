@@ -1,5 +1,4 @@
-let pokemonList = [
-  {
+let pokemonList = [{
     name: "Bulbasaur",
     height: 3,
     type: "grass,poison",
