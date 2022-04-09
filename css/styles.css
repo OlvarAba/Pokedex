@@ -17,6 +17,8 @@ h1 {
 .pokemonstats {
   color: white;
   text-align: center;
+  font-size: 30px;
+  font-family: 'Rubik', sans-serif;
 }
 
 a {
