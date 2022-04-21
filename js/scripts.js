@@ -1,3 +1,5 @@
+//IIFE
+let pokemonRepository = (function () {
 let pokemonList = [{
     name: "Bulbasaur",
     height: 3,
@@ -15,11 +17,25 @@ let pokemonList = [{
   },
 ];
 
-//loop that list all pokemon with the height and name
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write(
-    "Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + "."
-  );
+function add (pokemon) {
+   pokemonList.push(pokemon)
+ }
+
+ function getAll () {
+   return pokemonList
+ };
+
+ return {
+   add: function(pokemon) {
+     pokemonList.push(pokemon);
+   },
+   getAll: function() {
+     return pokemonList;
+   }
+ };
+
+//forEach Loop
+  pokemonList.ForEach(pokemon => document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + "."));
 
   //conditional if a pokemon has a height above 2 it is big
   if (pokemonList[i].height > 2) {
@@ -28,3 +44,7 @@ for (let i = 0; i < pokemonList.length; i++) {
 
   document.write("<br>");
 }
+})();
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon)
+  });
