@@ -1,53 +1,66 @@
-//IIFE
 let pokemonRepository = (function() {
-  let pokemonList = [{
-      name: "Bulbasaur",
-      height: 2,
-      type: "grass,poison",
-    },
-    {
-      name: "Squirtle",
-      height: 1,
-      type: "water",
-    },
-    {
-      name: "Charmander",
-      height: 2,
-      type: "fire",
-    },
-    {
-      name: "Pikachu",
-      height: 1,
-      type: "electric"
-    },
-    {
-      name: "Nidoqueen",
-      height: 4,
-      type: "poison, ground"
-    }
-  ];
+      let pokemonList = [{
+          name: "Bulbasaur",
+          height: 2,
+          type: "grass,poison",
+        },
+        {
+          name: "Squirtle",
+          height: 1,
+          type: "water",
+        },
+        {
+          name: "Charmander",
+          height: 2,
+          type: "fire",
+        },
+        {
+          name: "Pikachu",
+          height: 1,
+          type: "electric"
+        },
+        {
+          name: "Nidoqueen",
+          height: 4,
+          type: "poison, ground"
+        }
+      ];
 
-  function getAll(){
-    return pokemonList;
-  }
+      function getAll() {
+        return pokemonList;
+      }
 
-  function add(pokemon){
+      function add(pokemon) {
         pokemonList.push(pokemon);
-    }
+      }
 
-  return {
-    add: add,
-    getAll: getAll
+      function addListItem(pokemon) {
+        let pokemonList = document.querySelector(".pokemon-list");
+        let listpokemon = document.createElement('li');
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        button.classList.add("button-class");
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
+      }
+
+      function addEvent(button, pokemon) {
+      button.addEventListener('click', function () {
+          showDetails(pokemon);
+      })
   }
 
-})();
-pokemonRepository.getAll().forEach(function (pokemon) {
-  document.write("name: " + pokemon.name + " height: " + pokemon.height + " type: " + pokemon.type);
+        function showDetails(pokemon) {
+          console.log(pokemon);
+        }
 
-  //conditional if a pokemon has a height above 2 it is big
-  if (pokemon.height > 3) {
-    document.write(" - Wow that is big");
-  }
+        return {
+          add: add,
+          getAll: getAll,
+          addListItem: addListItem
+        };
+      })();
 
-  document.write("<br>");
-});
+    pokemonRepository.getAll().forEach(function(pokemon) {
+      pokemonRepository.addListItem(pokemon);
+    });
