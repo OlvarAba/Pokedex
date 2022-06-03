@@ -70,20 +70,20 @@ let pokemonRepository = (function() {
 
 		let pokemonName = $(`<h1>${pokemon.name}</h1>`);
 		let pokemonImage = $(
-			`<img class="modal-img mx-auto" src="${pokemon.svgUrl}" alt="Drawing of Pokemon ${pokemon.name}">`
+			`<img class="modal-img mx-auto" src="${pokemon.imageUrl}" alt="Drawing of Pokemon ${pokemon.name}">`
 		);
 		let pokemonHeight = $(
 			`<p class="ml-4 mt-3 mb-0">Height: ${pokemon.height}</p>`
 		);
 		let pokemonWeight = $(`<p class="ml-4 mb-0">Weight: ${pokemon.weight}</p>`);
 		let pokemonTypes = $(
-			`<p class="ml-4">Types: ${pokemon.types.join(", ")}</p>`
+			`<p class="ml-4">Types: ${pokemon.types}</p>`
 		);
 
-		modalTitle.appendChild(pokemonName);
-		modalBody.appendChild(pokemonImage);
-		modalBody.appendChild(pokemonHeight);
-		modalBody.appendChild(pokemonTypes);
+		modalTitle.append(pokemonName);
+		modalBody.append(pokemonImage);
+		modalBody.append(pokemonHeight);
+		modalBody.append(pokemonTypes);
 	}
 
 	function showDetails(pokemon) {
