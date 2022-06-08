@@ -12,13 +12,19 @@ body {
 h1 {
   text-align: center;
   color: black;
+  text-transform: capitalize;
 }
 
 li {
-  display: inline;
   padding: 5px;
-  top-padding: 5px;
 }
+
+.btn {
+  background-color: #ffcb05;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
 
 .pokemonstats {
   color: white;
@@ -29,15 +35,6 @@ li {
 
 a {
   cursor: pointer;
-}
-
-.button-class {
- background-color: #ffcb05;
- border-radius: 15px;
- height: 60px;
- width: 250px;
- font-size: 30px;
- font-family: 'Koulen', cursive;
 }
 
 /* using this to get rid of the bullets on the list */
